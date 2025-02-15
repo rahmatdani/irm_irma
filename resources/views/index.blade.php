@@ -21,41 +21,45 @@
 
         <!-- Tabel Data -->
         <div class="overflow-hidden bg-white rounded-lg shadow-md">
-            <table class="min-w-full divide-y divide-gray-200">
-                <thead class="bg-gray-50">
-                    <tr>
-                        <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Kategori</th>
-                        <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Sub Kategori</th>
-                        <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Kelompok</th>
-                        <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Kejadian</th>
-                        <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Tipe Sumber</th>
-                        <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Penyebab</th>
-                        <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Area Dampak</th>
-                        <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                    @foreach($risiko_list as $risiko)
-                    <tr>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $risiko->kategori_risiko->nama }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $risiko->sub_kategori->nama }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $risiko->kelompok_risiko->nama }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $risiko->kejadian_risiko->deskripsi }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $risiko->tipe_sumber_risiko }}</td>
-                        <td class="px-6 py-4">{{ $risiko->penyebab }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">{{ $risiko->area_dampak }}</td>
-                        <td class="px-6 py-4 whitespace-nowrap">
-                            <button onclick="editRisiko({{ $risiko->id }})" class="px-3 py-1 mr-2 text-sm text-white bg-yellow-500 rounded hover:bg-yellow-600">
-                                Edit
-                            </button>
-                            <button onclick="deleteRisiko({{ $risiko->id }})" class="px-3 py-1 text-sm text-white bg-red-500 rounded hover:bg-red-600">
-                                Hapus
-                            </button>
-                        </td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            <div class="overflow-x-auto">
+                <div class="inline-block min-w-full">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Kategori</th>
+                                <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Sub Kategori</th>
+                                <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Kelompok</th>
+                                <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Kejadian</th>
+                                <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Tipe Sumber</th>
+                                <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Penyebab</th>
+                                <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Area Dampak</th>
+                                <th class="px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            @foreach($risiko_list as $risiko)
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap">{{ $risiko->kategori_risiko->nama }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{ $risiko->sub_kategori->nama }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{ $risiko->kelompok_risiko->nama }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{ $risiko->kejadian_risiko->deskripsi }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{ $risiko->tipe_sumber_risiko }}</td>
+                                <td class="px-6 py-4">{{ $risiko->penyebab }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">{{ $risiko->area_dampak }}</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <button onclick="editRisiko({{ $risiko->id }})" class="px-3 py-1 mr-2 text-sm text-white bg-yellow-500 rounded hover:bg-yellow-600">
+                                        Edit
+                                    </button>
+                                    <button onclick="deleteRisiko({{ $risiko->id }})" class="px-3 py-1 text-sm text-white bg-red-500 rounded hover:bg-red-600">
+                                        Hapus
+                                    </button>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
