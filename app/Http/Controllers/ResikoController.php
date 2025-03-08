@@ -104,4 +104,6 @@ class ResikoController extends Controller
 
         return response()->json(['message' => 'Data berhasil dihapus']);
     }
+
+
 }

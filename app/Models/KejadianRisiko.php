@@ -11,10 +11,19 @@ class KejadianRisiko extends Model
 
     protected $table = 'kejadian_risiko';
 
-    protected $fillable = ['nama', 'kelompok_risiko_id'];
+    protected $fillable = [
+        'deskripsi',
+        'kelompok_risiko_id',
+        'kategori_risiko_id'  // Tambahkan ini
+    ];
 
     public function kelompokRisiko()
     {
         return $this->belongsTo(KelompokRisiko::class, 'kelompok_risiko_id');
+    }
+
+    public function kategoriRisiko()  // Tambahkan relasi ini
+    {
+        return $this->belongsTo(KategoriRisiko::class, 'kategori_risiko_id');
     }
 }
