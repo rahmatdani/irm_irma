@@ -37,8 +37,8 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/home') }}">
                 {{-- <div class="sidebar-brand-icon rotate-n-15">
-                <i class="fas fa-laugh-wink"></i>
-            </div> --}}
+                    <i class="fas fa-laugh-wink"></i>
+                </div> --}}
                 <div class="mx-3 sidebar-brand-text">Welcome<br>Admin</div>
             </a>
 
@@ -52,8 +52,15 @@
                     <span>{{ __('Resiko') }}</span></a>
             </li>
 
+            <li class="nav-item {{ request()->routeIs('resiko.index') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('resiko.index') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>{{ __('Penetapan Konteks') }}</span></a>
+            </li>
+
             <!-- Divider -->
-            {{-- <hr class="sidebar-divider"> --}}
+            {{--
+            <hr class="sidebar-divider"> --}}
 
             <!-- Nav Item - Teacher -->
             {{-- <li class="nav-item {{ request()->routeIs('admin.teachers.index') ? 'active' : '' }}">
@@ -80,36 +87,36 @@
 
 
             {{-- <li class="nav-item {{ request()->routeIs('evaluations.create') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('evaluations.create') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>{{ __('Manage Truck') }}</span></a>
-        </li>
-        <li class="nav-item {{ request()->routeIs('evaluations.create') ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('evaluations.create') }}">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>{{ __('Manage Position') }}</span></a>
-        </li> --}}
+                <a class="nav-link" href="{{ route('evaluations.create') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>{{ __('Manage Truck') }}</span></a>
+            </li>
+            <li class="nav-item {{ request()->routeIs('evaluations.create') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('evaluations.create') }}">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>{{ __('Manage Position') }}</span></a>
+            </li> --}}
 
             <!-- Heading -->
             {{-- <div class="sidebar-heading">
-            {{ __('Settings') }}
-        </div> --}}
+                {{ __('Settings') }}
+            </div> --}}
 
             <!-- Nav Item - Profile -->
             {{-- <li class="nav-item {{ Nav::isRoute('profile') }}">
-            <a class="nav-link" href="{{ route('profile') }}">
-                <i class="fas fa-fw fa-user"></i>
-                <span>{{ __('Profile') }}</span>
-            </a>
-        </li> --}}
+                <a class="nav-link" href="{{ route('profile') }}">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>{{ __('Profile') }}</span>
+                </a>
+            </li> --}}
 
             <!-- Nav Item - About -->
             {{-- <li class="nav-item {{ Nav::isRoute('about') }}">
-            <a class="nav-link" href="{{ route('about') }}">
-                <i class="fas fa-fw fa-hands-helping"></i>
-                <span>{{ __('About') }}</span>
-            </a>
-        </li> --}}
+                <a class="nav-link" href="{{ route('about') }}">
+                    <i class="fas fa-fw fa-hands-helping"></i>
+                    <span>{{ __('About') }}</span>
+                </a>
+            </li> --}}
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -176,7 +183,9 @@
                                 <span class="mr-2 text-gray-600 d-none d-lg-inline small">Selamat Datang,
                                     {{ Auth::user()->name ?? 'Guest' }}
                                 </span>
-                                {{-- <figure class="img-profile rounded-circle avatar font-weight-bold" data-initial="{{ Auth::guard('superadmin')->user()->name ?? 'Guest' }}"></figure> --}}
+                                {{-- <figure class="img-profile rounded-circle avatar font-weight-bold"
+                                    data-initial="{{ Auth::guard('superadmin')->user()->name ?? 'Guest' }}"></figure>
+                                --}}
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="shadow dropdown-menu dropdown-menu-right animated--grow-in"
