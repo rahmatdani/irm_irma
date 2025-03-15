@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
             SubKategoriSeeder::class,
             KelompokRisikoSeeder::class,
             KejadianRisikoSeeder::class,
+            SasaranStrategisSeeder::class,
         ]);
     }
 }
