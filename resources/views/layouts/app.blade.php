@@ -39,7 +39,7 @@
                 {{-- <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div> --}}
-                <div class="mx-3 sidebar-brand-text">Siswa</div>
+                <div class="mx-3 sidebar-brand-text">User</div>
             </a>
 
             <!-- Divider -->
@@ -327,29 +327,28 @@
                         <form action="{{ route('evaluations.store') }}" method="POST">
                             @csrf
 
-                            <div class="form-group">
+                            {{-- <div class="form-group">
                                 <label for="teacher_id">Pilih Guru:</label>
                                 <select name="teacher_id" id="teacher_id" class="form-control" required>
                                     <option value="">-- Pilih Guru --</option>
                                     @foreach ($teachers as $teacher)
-                                        <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
+                                    <option value="{{ $teacher->id }}">{{ $teacher->name }}</option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div> --}}
 
-                            <h3>Kriteria Penilaian</h3>
+                            {{-- <h3>Kriteria Penilaian</h3>
                             @foreach ($criteria as $criterion)
-                                <div class="form-group">
-                                    <label for="criterion_{{ $criterion->id }}">{{ $criterion->name }}:</label>
-                                    <select name="criteria[{{ $criterion->id }}]" id="criterion_{{ $criterion->id }}"
-                                        class="form-control">
-                                        <option value="">-- Pilih Skor (1-9) --</option>
-                                        @for ($i = 1; $i <= 9; $i++)
-                                            <option value="{{ $i }}">{{ $i }}</option>
+                            <div class="form-group">
+                                <label for="criterion_{{ $criterion->id }}">{{ $criterion->name }}:</label>
+                                <select name="criteria[{{ $criterion->id }}]" id="criterion_{{ $criterion->id }}"
+                                    class="form-control">
+                                    <option value="">-- Pilih Skor (1-9) --</option>
+                                    @for ($i = 1; $i <= 9; $i++) <option value="{{ $i }}">{{ $i }}</option>
                                         @endfor
-                                    </select>
-                                </div>
-                            @endforeach
+                                </select>
+                            </div>
+                            @endforeach --}}
 
                             <button type="submit" class="btn btn-primary">Kirim Penilaian</button>
                         </form>

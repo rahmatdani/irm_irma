@@ -52,8 +52,8 @@
                     <span>{{ __('Resiko') }}</span></a>
             </li>
 
-            <li class="nav-item {{ request()->routeIs('resiko.index') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('resiko.index') }}">
+            <li class="nav-item {{ request()->routeIs('penetapan_konteks.index') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('penetapan_konteks.index') }}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>{{ __('Penetapan Konteks') }}</span></a>
             </li>
